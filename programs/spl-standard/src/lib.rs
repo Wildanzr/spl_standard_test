@@ -1,4 +1,3 @@
-// 1. Import dependencies
 use anchor_lang::prelude::*;
 use anchor_spl::{
     associated_token::AssociatedToken,
@@ -9,10 +8,8 @@ use anchor_spl::{
     token::{mint_to, Mint, MintTo, Token, TokenAccount},
 };
 
-// 2. Declare Program ID (SolPG will automatically update this when you deploy)
 declare_id!("FRw1e2aDNtwGw5zeuysDd88pzwReV4Qaqp3wNwZijaB6");
 
-// 3. Define the program and instructions
 #[program]
 mod spl_standard {
     use super::*;
@@ -70,9 +67,10 @@ mod spl_standard {
 
         Ok(())
     }
+
+    // TODO: Add function to approve token transfer and burn token
 }
 
-// 4. Define the context for each instruction
 #[derive(Accounts)]
 #[instruction(
     params: InitTokenParams
@@ -122,7 +120,6 @@ pub struct MintTokens<'info> {
     pub associated_token_program: Program<'info, AssociatedToken>,
 }
 
-// 5. Define the init token params
 #[derive(AnchorSerialize, AnchorDeserialize, Debug, Clone)]
 pub struct InitTokenParams {
     pub name: String,
