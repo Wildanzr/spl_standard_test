@@ -8,7 +8,7 @@ describe("Test Minter", () => {
   anchor.setProvider(anchor.AnchorProvider.env());
 
   const program = anchor.workspace.SplStandard as anchor.Program<SplStandard>;
-  
+
   // Metaplex Constants
   const METADATA_SEED = "metadata";
   const TOKEN_METADATA_PROGRAM_ID = new web3.PublicKey(
@@ -79,7 +79,8 @@ describe("Test Minter", () => {
 
     let initialBalance: number;
     try {
-      const balance = await program.provider.connection.getTokenAccountBalance(destination);
+      const balance =
+        await program.provider.connection.getTokenAccountBalance(destination);
       initialBalance = balance.value.uiAmount;
     } catch {
       // Token account not yet initiated has 0 balance
