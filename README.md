@@ -4,5 +4,5 @@
 cargo clean
 anchor keys sync
 anchor build
-anchor test
+anchor test --skip-local-validator
 ```

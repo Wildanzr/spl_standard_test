@@ -3,6 +3,7 @@ import assert from "assert";
 import * as web3 from "@solana/web3.js";
 import * as anchor from "@coral-xyz/anchor";
 import type { SplStandard } from "../target/types/spl_standard";
+
 describe("Test Minter", () => {
   // Configure the client to use the local cluster
   anchor.setProvider(anchor.AnchorProvider.env());

@@ -6,16 +6,21 @@ solana_version = "1.18.18"
 seeds = false
 skip-lint = true
 
-[programs.localnet]
-spl_standard = "7bsQoXhTB3B3YxBHoHZQzzza9gTCkbaiV88thC8tXtb"
+[programs.devnet]
+spl_standard = "EEHq6xzUyzGZHVEoa4qNX5dvMtNXBcLeJAJ8NGDvZBWL"
 
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "Localnet"
+cluster = "Devnet"
 wallet = "/home/codespace/.config/solana/id.json"
 
 [scripts]
 client = "yarn run ts-node client/*.ts"
 test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
+
+[test]
+startup_wait = 5000
+shutdown_wait = 2000
+upgradeable = false
