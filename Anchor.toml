@@ -6,14 +6,14 @@ solana_version = "1.18.18"
 seeds = false
 skip-lint = true
 
-[programs.localnet]
-spl_standard = "4i6jMLziDMhapneCugKAMmfFNXJkyeqCZdKka1ptPFvb"
+[programs.devnet]
+spl_standard = "85bkeTq7hfDg6PzJfM8BL7e7SKyssudcctD3r83FKfKx"
 
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "Localnet"
+cluster = "Devnet"
 wallet = "/home/codespace/.config/solana/id.json"
 
 [scripts]

@@ -8,7 +8,7 @@ use anchor_spl::{
     token::{mint_to, Mint, MintTo, Token, TokenAccount},
 };
 
-declare_id!("4i6jMLziDMhapneCugKAMmfFNXJkyeqCZdKka1ptPFvb");
+declare_id!("85bkeTq7hfDg6PzJfM8BL7e7SKyssudcctD3r83FKfKx");
 
 #[program]
 mod spl_standard {
