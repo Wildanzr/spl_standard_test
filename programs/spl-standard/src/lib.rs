@@ -8,7 +8,7 @@ use anchor_spl::{
     token::{mint_to, Mint, MintTo, Token, TokenAccount},
 };
 
-declare_id!("8wrFvwuZn5c8BTZkMYKepNqrb37iks2z32LoyAajaa3t");
+declare_id!("8Yf6KLHaK1wAbFwFPqFwXe8pUdZRuXMwy3Uex4aDQy5T");
 
 #[program]
 mod spl_standard {
@@ -86,6 +86,7 @@ pub struct InitToken<'info> {
         payer = payer,
         mint::decimals = params.decimals,
         mint::authority = payer,
+        mint::freeze_authority = payer,
     )]
     pub mint: Account<'info, Mint>,
     #[account(mut)]
@@ -103,6 +104,7 @@ pub struct MintTokens<'info> {
         seeds = [b"mint"],
         bump,
         mint::authority = payer,
+        mint::freeze_authority = payer,
     )]
     pub mint: Account<'info, Mint>,
     #[account(

@@ -24,7 +24,7 @@ describe("Test Minter", () => {
   const metadata = {
     name: "KOCHENGGG",
     symbol: "KCGG",
-    uri: "https://pbs.twimg.com/media/EHPhZNXXkAEqXQ-.jpg",
+    uri: "https://gray-tough-canidae-94.mypinata.cloud/ipfs/QmNwuk78MowS7ic2mnd1YSuo2wEqVkGoxrjqjZoc8FCZzq",
     decimals: 9,
   };
   const mintAmount = 10;
