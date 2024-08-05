@@ -22,9 +22,9 @@ describe("Test Minter", () => {
   // Data for our tests
   const payer = program.provider.publicKey;
   const metadata = {
-    name: "Just a Test Token",
-    symbol: "TEST",
-    uri: "https://5vfxc4tr6xoy23qefqbj4qx2adzkzapneebanhcalf7myvn5gzja.arweave.net/7UtxcnH13Y1uBCwCnkL6APKsge0hAgacQFl-zFW9NlI",
+    name: "KOCHENGGG",
+    symbol: "KCGG",
+    uri: "https://pbs.twimg.com/media/EHPhZNXXkAEqXQ-.jpg",
     decimals: 9,
   };
   const mintAmount = 10;

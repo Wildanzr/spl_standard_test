@@ -8,7 +8,7 @@ use anchor_spl::{
     token::{mint_to, Mint, MintTo, Token, TokenAccount},
 };
 
-declare_id!("85bkeTq7hfDg6PzJfM8BL7e7SKyssudcctD3r83FKfKx");
+declare_id!("8wrFvwuZn5c8BTZkMYKepNqrb37iks2z32LoyAajaa3t");
 
 #[program]
 mod spl_standard {
@@ -31,10 +31,10 @@ mod spl_standard {
             ctx.accounts.token_metadata_program.to_account_info(),
             CreateMetadataAccountsV3 {
                 payer: ctx.accounts.payer.to_account_info(),
-                update_authority: ctx.accounts.mint.to_account_info(),
+                update_authority: ctx.accounts.payer.to_account_info(),
                 mint: ctx.accounts.mint.to_account_info(),
                 metadata: ctx.accounts.metadata.to_account_info(),
-                mint_authority: ctx.accounts.mint.to_account_info(),
+                mint_authority: ctx.accounts.payer.to_account_info(),
                 system_program: ctx.accounts.system_program.to_account_info(),
                 rent: ctx.accounts.rent.to_account_info(),
             },
@@ -56,7 +56,7 @@ mod spl_standard {
             CpiContext::new_with_signer(
                 ctx.accounts.token_program.to_account_info(),
                 MintTo {
-                    authority: ctx.accounts.mint.to_account_info(),
+                    authority: ctx.accounts.payer.to_account_info(),
                     to: ctx.accounts.destination.to_account_info(),
                     mint: ctx.accounts.mint.to_account_info(),
                 },
@@ -85,7 +85,7 @@ pub struct InitToken<'info> {
         bump,
         payer = payer,
         mint::decimals = params.decimals,
-        mint::authority = mint,
+        mint::authority = payer,
     )]
     pub mint: Account<'info, Mint>,
     #[account(mut)]
@@ -102,7 +102,7 @@ pub struct MintTokens<'info> {
         mut,
         seeds = [b"mint"],
         bump,
-        mint::authority = mint,
+        mint::authority = payer,
     )]
     pub mint: Account<'info, Mint>,
     #[account(

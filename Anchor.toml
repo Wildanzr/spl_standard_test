@@ -7,7 +7,7 @@ seeds = false
 skip-lint = true
 
 [programs.devnet]
-spl_standard = "85bkeTq7hfDg6PzJfM8BL7e7SKyssudcctD3r83FKfKx"
+spl_standard = "8wrFvwuZn5c8BTZkMYKepNqrb37iks2z32LoyAajaa3t"
 
 [registry]
 url = "https://api.apr.dev"
